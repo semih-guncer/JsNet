@@ -1,5 +1,5 @@
 # JsNet
-Easy way to use js libraries with Asp.Net 
+Easy way to use JavaScript libraries on Asp.Net 
 
 Create object on c# 
 and fill properties.
