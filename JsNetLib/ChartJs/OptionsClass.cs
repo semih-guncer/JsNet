@@ -26,9 +26,6 @@ namespace JsNet.ChartJs
         private bool _maintainAspectRatio = true;
         private List<string> _events = new List<string>();
         public TitleClass _title = null;
-        //Function onClick = null;
-        //Function legendCallback = function (chart) { }
-        //Function onResize = null;
 
         public bool responsive { get { return _responsive; } set { _responsive = value; } }
         public int responsiveAnimationDuration { get { return _responsiveAnimationDuration; } set { _responsiveAnimationDuration = value; } }

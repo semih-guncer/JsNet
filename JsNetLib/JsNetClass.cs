@@ -9,9 +9,11 @@ using System.Reflection;
 using System.Web.Script.Serialization;
 
 /// <summary>
-///   Namespace   : JsNet
 ///   Description : Easy way to use js libraries with Asp.Net 
 ///   Writen By   : Semih Günçer
+///   Namespace   : JsNet
+///   Classes     : JsNetClass
+/// 
 ///   Date       Author               Description
 ///   ---------- -------------------- -------------------------------------------------
 ///   
