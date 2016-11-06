@@ -48,7 +48,6 @@
     <Compile Include="ChartJs\DataClass.cs" />
     <Compile Include="ChartJs\DatasetClass.cs" />
     <Compile Include="ChartJs\OptionsClass.cs" />
-    <Compile Include="ChartJs\TitleClass.cs" />
     <Compile Include="JsNetClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
