@@ -22,7 +22,7 @@ namespace JsNet.ChartJs
     /// <summary>
     /// Base Config class 
     /// </summary>
-    public abstract class ConfigClass
+    public abstract class ConfigClass : JsNetBaseClass
     {
         protected string _type = ""; // { line, bar, radar, polarArea, pie, doughnut, bubble }
         protected OptionsClass _options = new OptionsClass();
@@ -142,6 +142,22 @@ namespace JsNet.ChartJs
         public OptionsClass options { get { return _options; } set { _options = value; } }
 
         public ConfigLine()
+        {
+            _type = "line";
+        }
+    }
+    /// <summary>
+    /// Config class for Scatter "line"
+    /// </summary>
+    public class ConfigScatterLine : ConfigClass
+    {
+        private DataScatterLine _data = new DataScatterLine();
+
+        public string type { get { return _type; } }
+        public DataScatterLine data { get { return _data; } set { _data = value; } }
+        public OptionsClass options { get { return _options; } set { _options = value; } }
+
+        public ConfigScatterLine()
         {
             _type = "line";
         }

@@ -28,33 +28,60 @@ namespace JsNet.ChartJs
             return retVal;
         }
 
-        public static ConfigPie LoadConfigPie(string fileName)
+        public static void Load(ref ConfigPie o, string fileName)
         {
-            return (JsNetClass.jsonLoad<ConfigPie>(fileName)) as ConfigPie;
+            JsNetBaseClass ob = o;
+            jsonLoad(ref ob, fileName);
+            o = (ConfigPie)ob;
         }
-        public static ConfigDoughnut LoadConfigDoughnut(string fileName)
+
+        public static void Load(ref ConfigDoughnut o, string fileName)
         {
-            return (JsNetClass.jsonLoad<ConfigDoughnut>(fileName)) as ConfigDoughnut;
+            JsNetBaseClass ob = o;
+            jsonLoad(ref ob, fileName);
+            o = (ConfigDoughnut)ob;
         }
-        public static ConfigPolarArea LoadConfigPolarArea(string fileName)
+
+        public static void Load(ref ConfigPolarArea o, string fileName)
         {
-            return (JsNetClass.jsonLoad<ConfigPolarArea>(fileName)) as ConfigPolarArea;
+            JsNetBaseClass ob = o;
+            jsonLoad(ref ob, fileName);
+            o = (ConfigPolarArea)ob;
         }
-        public static ConfigBubble LoadConfigBubble(string fileName)
+
+        public static void Load(ref ConfigBubble o, string fileName)
         {
-            return (JsNetClass.jsonLoad<ConfigBubble>(fileName)) as ConfigBubble;
+            JsNetBaseClass ob = o;
+            jsonLoad(ref ob, fileName);
+            o = (ConfigBubble)ob;
         }
-        public static ConfigBar LoadConfigBar(string fileName)
+
+        public static void Load(ref ConfigBar o, string fileName)
         {
-            return (JsNetClass.jsonLoad<ConfigBar>(fileName)) as ConfigBar;
+            JsNetBaseClass ob = o;
+            jsonLoad(ref ob, fileName);
+            o = (ConfigBar)ob;
         }
-        public static ConfigRadar LoadConfigRadar(string fileName)
+
+        public static void Load(ref ConfigRadar o, string fileName)
         {
-            return (JsNetClass.jsonLoad<ConfigRadar>(fileName)) as ConfigRadar;
+            JsNetBaseClass ob = o;
+            jsonLoad(ref ob, fileName);
+            o = (ConfigRadar)ob;
         }
-        public static ConfigLine LoadConfigLine(string fileName)
+
+        public static void Load(ref ConfigLine o, string fileName)
         {
-            return (JsNetClass.jsonLoad<ConfigLine>(fileName)) as ConfigLine;
+            JsNetBaseClass ob = o;
+            jsonLoad(ref ob, fileName);
+            o = (ConfigLine)ob;
+        }
+
+        public static void Load(ref ConfigScatterLine o, string fileName)
+        {
+            JsNetBaseClass ob = o;
+            jsonLoad(ref ob, fileName);
+            o = (ConfigScatterLine)ob;
         }
 
 
@@ -85,6 +112,10 @@ namespace JsNet.ChartJs
         public static string Serialize(ConfigLine configLine, int indentStep)
         {
             return JsNetClass.javascriptSerialize(configLine, indentStep);
+        }
+        public static string Serialize(ConfigScatterLine configScatterLine, int indentStep)
+        {
+            return JsNetClass.javascriptSerialize(configScatterLine, indentStep);
         }
     }
 }

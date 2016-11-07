@@ -18,7 +18,8 @@ namespace JsNetLibDemo.ChartJs
         public string GetExampleChartBar()
         {
             string templateFile = Server.MapPath("TemplateBar.json");
-            ConfigBar c = ChartJsNet.LoadConfigBar(templateFile);
+            ConfigBar c = new ConfigBar();
+            ChartJsNet.Load(ref c, templateFile);
 
             c.data.datasets[0].data.Clear();
             c.data.datasets[0].data.Add(120);
@@ -31,10 +32,45 @@ namespace JsNetLibDemo.ChartJs
             return ChartJsNet.Serialize(c, 0);
         }
 
+        public string GetExampleChartRadar()
+        {
+            string templateFile = Server.MapPath("TemplateRadar.json");
+            ConfigRadar c = new ConfigRadar();
+            ChartJsNet.Load(ref c, templateFile);
+
+            ///c.data.datasets[0].data.Clear();
+            ///c.data.datasets[0].data.Add(120);
+            ///c.data.datasets[0].data.Add(190);
+            ///c.data.datasets[0].data.Add(30);
+            ///c.data.datasets[0].data.Add(50);
+            ///c.data.datasets[0].data.Add(20);
+            ///c.data.datasets[0].data.Add(30);
+
+            return ChartJsNet.Serialize(c, 0);
+        }
+
+        public string GetExampleChartLine()
+        {
+            string templateFile = Server.MapPath("TemplateLine.json");
+            ConfigLine c = new ConfigLine();
+            ChartJsNet.Load(ref c, templateFile);
+
+            ///c.data.datasets[0].data.Clear();
+            ///c.data.datasets[0].data.Add(120);
+            ///c.data.datasets[0].data.Add(190);
+            ///c.data.datasets[0].data.Add(30);
+            ///c.data.datasets[0].data.Add(50);
+            ///c.data.datasets[0].data.Add(20);
+            ///c.data.datasets[0].data.Add(30);
+
+            return ChartJsNet.Serialize(c, 2);
+        }
+
         public string GetExampleChartPie()
         {
             string templateFile = Server.MapPath("TemplatePie.json");
-            ConfigPie c = ChartJsNet.LoadConfigPie(templateFile);
+            ConfigPie c = new ConfigPie();
+            ChartJsNet.Load(ref c, templateFile);
 
             c.data.datasets[0].data.Clear();
             c.data.datasets[0].data.Add(120);

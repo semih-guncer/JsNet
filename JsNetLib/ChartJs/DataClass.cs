@@ -21,7 +21,7 @@ namespace JsNet.ChartJs
     /// <summary>
     /// Base Data class 
     /// </summary>
-    public abstract class DataClass
+    public abstract class DataClass : JsNetBaseClass
     {
         private List<string> _labels = new List<string>();
         private List<string> _xLabels = new List<string>();
@@ -100,6 +100,15 @@ namespace JsNet.ChartJs
         private List<DatasetLine> _datasets = new List<DatasetLine>();
 
         public List<DatasetLine> datasets { get { return _datasets; } set { _datasets = value; } }
+    }
+    /// <summary>
+    /// Data class for Scatter "line"
+    /// </summary>
+    public class DataScatterLine : DataClass
+    {
+        private List<DatasetScatterLine> _datasets = new List<DatasetScatterLine>();
+
+        public List<DatasetScatterLine> datasets { get { return _datasets; } set { _datasets = value; } }
     }
 
 }

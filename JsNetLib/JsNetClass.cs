@@ -21,44 +21,47 @@ using System.Web.Script.Serialization;
 namespace JsNet
 {
     /// <summary>
+    /// JsNet Base Class 
+    /// </summary>
+    public class JsNetBaseClass
+    {
+
+    }
+
+    /// <summary>
     /// Easy way to use js libraries with Asp.Net 
     /// </summary>
     public class JsNetClass
     {
-        protected static string jsonSerialize(object o)
+        protected static string jsonSerialize(JsNetBaseClass o)
         {
             JavaScriptSerializer s = new JavaScriptSerializer();
             return s.Serialize(o);
         }
 
-        protected static object jsonDeserialize(string input, Type targetType)
+        protected static JsNetBaseClass jsonDeserialize(string input, Type targetType)
         {
             JavaScriptSerializer s = new JavaScriptSerializer();
 
-            return s.Deserialize(input, targetType);
-        }
-        protected static object jsonDeserialize<T>(string input)
-        {
-            JavaScriptSerializer s = new JavaScriptSerializer();
-
-            return s.Deserialize<T>(input);
+            return (JsNetBaseClass)s.Deserialize(input, targetType);
         }
 
-        protected static object jsonLoad<T>(string fileName)
+        protected static void jsonLoad(ref JsNetBaseClass o, string fileName)
         {
+            Type targetType = o.GetType();
             string input = File.ReadAllText(fileName);
-            return jsonDeserialize<T>(input);
+            o = jsonDeserialize(input, targetType);
         }
 
 
-        protected static string javascriptSerialize(object o, int indentStep)
+        protected static string javascriptSerialize(JsNetBaseClass o, int indentStep)
         {
             StringBuilder retVal = new StringBuilder();
             javascriptSerialize(o, 0, indentStep, ref retVal);
             return retVal.ToString();
         }
 
-        protected static void javascriptSerialize(object o, int indentLevel, int indentStep, ref StringBuilder s)
+        private static void javascriptSerialize(object o, int indentLevel, int indentStep, ref StringBuilder s)
         {
             try
             {
@@ -69,7 +72,9 @@ namespace JsNet
                         s.Append(o);
                     else if (o is float || o is double)
                     {
-                        s.Append(o);
+                        double od = (double)o;
+                        string sod = od.ToString("###0.#").Replace(",", ".");
+                        s.Append(sod);
                     }
                     else if (o is bool)
                     {
