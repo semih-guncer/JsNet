@@ -92,6 +92,7 @@ namespace JsNet.ChartJs.Options
     {
         private string _mode = "single";
         private double _animationDuration = 400;
+        private JsNetFunction _onHover = null;
 
         /// <summary>
         /// ['single', 'label', 'x-axis', 'dataset'.]
@@ -99,15 +100,15 @@ namespace JsNet.ChartJs.Options
         public string mode { get { return _mode; } set { _mode = value; } }
         public double animationDuration { get { return _animationDuration; } set { _animationDuration = value; } }
         
-        // onHover Function 	null 
+        public JsNetFunction onHover { get { return _onHover; } set { _onHover = value; } }
     }
 
     public class TooltipClass : JsNetBaseClass
     {
         private bool _enabled = true;
-        // private FUNCTION _custom = null;
+        private JsNetFunction _custom = null;
         private string _mode = "single";
-        // private FUNCTION _itemSort = undefined;
+        private JsNetFunction _itemSort = null;
         private string _backgroundColor = "rgba(0,0,0,0.8)";
         private string _titleFontFamily = "Helvetica";
         private double _titleFontSize = 12;
@@ -136,11 +137,11 @@ namespace JsNet.ChartJs.Options
 
         public bool enabled { get { return _enabled; } set { _enabled = value; } }
 
-        // public FUNCTION custom
+        public JsNetFunction custom { get { return _custom; } set { _custom = value; } }
 
         public string mode { get { return _mode; } set { _mode = value; } }
 
-        // public FUNCTION itemSort
+        public JsNetFunction itemSort { get { return _itemSort; } set { _itemSort = value; } }
 
         public string backgroundColor { get { return _backgroundColor; } set { _backgroundColor = value; } }
         public string titleFontFamily { get { return _titleFontFamily; } set { _titleFontFamily = value; } }
@@ -181,8 +182,9 @@ namespace JsNet.ChartJs.Options
         private string _position = "top";
         private bool _fullWidth = true;
 
-        // private FUNCTION _onClick = null;
-        // private FUNCTION _onHover = null;
+        private JsNetFunction _onClick = null;
+        private JsNetFunction _onHover = null;
+
         private List<LegendLabelClass> _labels = null;
 
 
@@ -191,6 +193,10 @@ namespace JsNet.ChartJs.Options
         //  'top', 'left', 'bottom', 'right'
         public string position { get { return _position; } set { _position = value; } }
         public bool fullWidth { get { return _fullWidth; } set { _fullWidth = value; } }
+
+        public JsNetFunction onClick { get { return _onClick; } set { _onClick = value; } }
+        public JsNetFunction onHover { get { return _onHover; } set { _onHover = value; } }
+
         public List<LegendLabelClass> labels { get { return _labels; } set { _labels = value; } }
     }
 
@@ -202,7 +208,7 @@ namespace JsNet.ChartJs.Options
         private string _fontColor = "#666";
         private string _fontFamily = "Helvetica";
         private double _padding = 10;
-        //private FUNCTION generateLabels = null;
+        private JsNetFunction _generateLabels = null;
         private bool _usePointStyle = false;
         private bool _reverse = false;
 
@@ -213,7 +219,7 @@ namespace JsNet.ChartJs.Options
         public string fontColor { get { return _fontColor; } set { _fontColor = value; } }
         public string fontFamily { get { return _fontFamily; } set { _fontFamily = value; } }
         public double padding { get { return _padding; } set { _padding = value; } }
-        //public FUNCTION generateLabels = null;
+        public JsNetFunction generateLabels { get { return _generateLabels; } set { _generateLabels = value; } }
         public bool usePointStyle { get { return _usePointStyle; } set { _usePointStyle = value; } }
         public bool reverse { get { return _reverse; } set { _reverse = value; } }
     }
@@ -230,20 +236,22 @@ namespace JsNet.ChartJs.Options
         // 'top', 'left', 'bottom' and 'right'.
         private string _position = "left";
         private string _id = "";
-        // private FUNCTION _beforeUpdate = undefined;
-        // private FUNCTION _beforeSetDimensions = undefined;
-        // private FUNCTION _afterSetDimensions = undefined;
-        // private FUNCTION _beforeDataLimits = undefined;
-        // private FUNCTION _afterDataLimits = undefined;
-        // private FUNCTION _beforeBuildTicks = undefined;
-        // private FUNCTION _afterBuildTicks = undefined;
-        // private FUNCTION _beforeTickToLabelConversion = undefined;
-        // private FUNCTION _afterTickToLabelConversion = undefined;
-        // private FUNCTION _beforeCalculateTickRotation = undefined;
-        // private FUNCTION _afterCalculateTickRotation = undefined;
-        // private FUNCTION _beforeFit = undefined;
-        // private FUNCTION _afterFit = undefined;
-        // private FUNCTION _afterUpdate = undefined;
+
+        private JsNetFunction _beforeUpdate = null;
+        private JsNetFunction _beforeSetDimensions = null;
+        private JsNetFunction _afterSetDimensions = null;
+        private JsNetFunction _beforeDataLimits = null;
+        private JsNetFunction _afterDataLimits = null;
+        private JsNetFunction _beforeBuildTicks = null;
+        private JsNetFunction _afterBuildTicks = null;
+        private JsNetFunction _beforeTickToLabelConversion = null;
+        private JsNetFunction _afterTickToLabelConversion = null;
+        private JsNetFunction _beforeCalculateTickRotation = null;
+        private JsNetFunction _afterCalculateTickRotation = null;
+        private JsNetFunction _beforeFit = null;
+        private JsNetFunction _afterFit = null;
+        private JsNetFunction _afterUpdate = null;
+
         private ScaleGridLines _gridLines = null;
         private ScaleLabel _scaleLabel = null;
         private ScaleTicks _ticks = null;
@@ -261,24 +269,26 @@ namespace JsNet.ChartJs.Options
         /// </summary>
         private string position { get { return _position; } set { _position = value; } }
         private string id { get { return _id; } set { _id = value; } }
-        // private FUNCTION beforeUpdate = undefined;
-        // private FUNCTION beforeSetDimensions = undefined;
-        // private FUNCTION afterSetDimensions = undefined;
-        // private FUNCTION beforeDataLimits = undefined;
-        // private FUNCTION afterDataLimits = undefined;
-        // private FUNCTION beforeBuildTicks = undefined;
-        // private FUNCTION afterBuildTicks = undefined;
-        // private FUNCTION beforeTickToLabelConversion = undefined;
-        // private FUNCTION afterTickToLabelConversion = undefined;
-        // private FUNCTION beforeCalculateTickRotation = undefined;
-        // private FUNCTION afterCalculateTickRotation = undefined;
-        // private FUNCTION beforeFit = undefined;
-        // private FUNCTION afterFit = undefined;
-        // private FUNCTION afterUpdate = undefined;
+
+
         private ScaleGridLines gridLines { get { return _gridLines; } set { _gridLines = value; } }
         private ScaleLabel scaleLabel { get { return _scaleLabel; } set { _scaleLabel = value; } }
         private ScaleTicks ticks { get { return _ticks; } set { _ticks = value; } }
 
+        private JsNetFunction beforeUpdate { get { return _beforeUpdate; } set { _beforeUpdate = value; } }
+        private JsNetFunction beforeSetDimensions { get { return _beforeSetDimensions; } set { _beforeSetDimensions = value; } }
+        private JsNetFunction afterSetDimensions { get { return _afterSetDimensions; } set { _afterSetDimensions = value; } }
+        private JsNetFunction beforeDataLimits { get { return _beforeDataLimits; } set { _beforeDataLimits = value; } }
+        private JsNetFunction afterDataLimits { get { return _afterDataLimits; } set { _afterDataLimits = value; } }
+        private JsNetFunction beforeBuildTicks { get { return _beforeBuildTicks; } set { _beforeBuildTicks = value; } }
+        private JsNetFunction afterBuildTicks { get { return _afterBuildTicks; } set { _afterBuildTicks = value; } }
+        private JsNetFunction beforeTickToLabelConversion { get { return _beforeTickToLabelConversion; } set { _beforeTickToLabelConversion = value; } }
+        private JsNetFunction afterTickToLabelConversion { get { return _afterTickToLabelConversion; } set { _afterTickToLabelConversion = value; } }
+        private JsNetFunction beforeCalculateTickRotation { get { return _beforeCalculateTickRotation; } set { _beforeCalculateTickRotation = value; } }
+        private JsNetFunction afterCalculateTickRotation { get { return _afterCalculateTickRotation; } set { _afterCalculateTickRotation = value; } }
+        private JsNetFunction beforeFit { get { return _beforeFit; } set { _beforeFit = value; } }
+        private JsNetFunction afterFit { get { return _afterFit; } set { _afterFit = value; } }
+        private JsNetFunction afterUpdate { get { return _afterUpdate; } set { _afterUpdate = value; } }
     }
 
     public class ScaleGridLines : JsNetBaseClass

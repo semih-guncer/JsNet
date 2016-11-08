@@ -28,6 +28,17 @@ namespace JsNet
 
     }
 
+    public class JsNetFunction : JsNetBaseClass
+    {
+        private string _name = "";
+        private List<string> _parameters = new List<string>();
+        private List<string> _bodyLines = new List<string>();
+
+        public string name { get { return _name; } set { _name = value; } }
+        public List<string> parameters { get { return _parameters; } set { _parameters = value; } }
+        public List<string> bodyLines { get { return _bodyLines; } set { _bodyLines = value; } }
+    }
+
     /// <summary>
     /// Easy way to use js libraries with Asp.Net 
     /// </summary>
@@ -135,6 +146,29 @@ namespace JsNet
                             s.Append(indent);
                             s.Append("]");
                         }
+                    }
+                    else if (o is JsNetFunction)
+                    {
+                        JsNetFunction of = (JsNetFunction)o;
+                        
+                        StringBuilder sp = new StringBuilder();
+                        for (int i = 0; i < of.parameters.Count; i++)
+                        {
+                            string item = of.parameters[i].Trim();
+                            if (item == "")
+                                item = "null";
+                            if (i > 0)
+                                sp.Append(", ");
+                            sp.Append(item);
+                        }
+                        s.AppendLine(" function " + of.name + "(" + sp.ToString() + ")");
+                        s.AppendLine("{");
+                        for (int i = 0; i < of.bodyLines.Count; i++)
+                        {
+                            string item = of.bodyLines[i].Trim();
+                            s.AppendLine(item);
+                        }
+                        s.AppendLine("}");
                     }
                     else
                     {

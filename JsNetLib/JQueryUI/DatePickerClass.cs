@@ -25,12 +25,16 @@ namespace JsNet.JQueryUI
         private string _altFormat = "";
         private string _appendText = "";
         private bool _autoSize = false;
-        //private FUNCTION _beforeShow = null;
-        //private FUNCTION _beforeShowDay = null;
+
+        private JsNetFunction _beforeShow = null;
+        private JsNetFunction _beforeShowDay = null;
+
         private string _buttonImage = "";
         private bool _buttonImageOnly = false;
         private string _buttonText = "...";
-        //private FUNCTION _calculateWeek = null;
+
+        private JsNetFunction _calculateWeek = null;
+
         private bool _changeMonth = false;
         private bool _changeYear = false;
         private string _closeText = "Done";
@@ -59,9 +63,11 @@ namespace JsNet.JQueryUI
         private bool _navigationAsDateFormat = false;
         private string _nextText = "Next";
         private List<int> _numberOfMonths = null;
-        //private FUNCTION _onChangeMonthYear = null;
-        //private FUNCTION _onClose = null;
-        //private FUNCTION _onSelect = null;
+
+        private JsNetFunction _onChangeMonthYear = null;
+        private JsNetFunction _onClose = null;
+        private JsNetFunction _onSelect = null;
+
         private string _prevText = "Prev";
         private bool _selectOtherMonths = false;
         private string _shortYearCutoff = "+10";
@@ -86,12 +92,16 @@ namespace JsNet.JQueryUI
         public string altFormat { get { return _altFormat; } set { value = _altFormat; } }
         public string appendText { get { return _appendText; } set { value = _appendText; } }
         public bool autoSize { get { return _autoSize; } set { value = _autoSize; } }
-        //public FUNCTION beforeShow = null;
-        //public FUNCTION beforeShowDay = null;
+
+        public JsNetFunction beforeShow { get { return _beforeShow; } set { value = _beforeShow; } }
+        public JsNetFunction beforeShowDay { get { return _beforeShowDay; } set { value = _beforeShowDay; } }
+
         public string buttonImage { get { return _buttonImage; } set { value = _buttonImage; } }
         public bool buttonImageOnly { get { return _buttonImageOnly; } set { value = _buttonImageOnly; } }
         public string buttonText { get { return _buttonText; } set { value = _buttonText; } }
-        //public FUNCTION calculateWeek = null
+
+        public JsNetFunction calculateWeek { get { return _calculateWeek; } set { value = _calculateWeek; } }
+
         public bool changeMonth { get { return _changeMonth; } set { value = _changeMonth; } }
         public bool changeYear  { get { return _changeYear; } set { value = _changeYear; } }
         public string closeText { get { return _closeText; } set { value = _closeText; } }
@@ -138,9 +148,11 @@ namespace JsNet.JQueryUI
         public bool navigationAsDateFormat { get { return _navigationAsDateFormat; } set { value = _navigationAsDateFormat; } }
         public string nextText { get { return _nextText; } set { value = _nextText; } }
         public List<int> numberOfMonths { get { return _numberOfMonths; } set { value = _numberOfMonths; } }
-        //private FUNCTION onChangeMonthYear = null;
-        //private FUNCTION onClose = null;
-        //private FUNCTION onSelect = null;
+
+        public JsNetFunction onChangeMonthYear { get { return _onChangeMonthYear; } set { value = _onChangeMonthYear; } }
+        public JsNetFunction onClose { get { return _onClose; } set { value = _onClose; } }
+        public JsNetFunction onSelect { get { return _onSelect; } set { value = _onSelect; } }
+
         public string prevText { get { return _prevText; } set { value = _prevText; } }
         public bool selectOtherMonths { get { return _selectOtherMonths; } set { value = _selectOtherMonths; } }
         public string shortYearCutoff { get { return _shortYearCutoff; } set { value = _shortYearCutoff; } }
