@@ -46,7 +46,7 @@ namespace JsNet.ChartJs
     public abstract class DatasetClass : JsNetBaseClass
     {
         // [*]
-        private string _label = "";
+        private string _label = null;
         private List<string> _backgroundColor = null;
         private List<string> _borderColor = null;
         private List<double> _borderWidth = null;
@@ -60,8 +60,8 @@ namespace JsNet.ChartJs
         protected List<double> _hoverRadius = null;
 
         // [DatasetBar ,DatasetLine]
-        protected string _xAxisID = "";
-        protected string _yAxisID = "";
+        protected string _xAxisID = null;
+        protected string _yAxisID = null;
 
         // [DatasetBar]
         protected List<string> _borderSkipped = null; // new List<string>();
@@ -74,10 +74,10 @@ namespace JsNet.ChartJs
         protected List<string> _pointStyle = null; //'circle', 'triangle', 'rect', 'rectRot', 'cross', 'crossRot', 'star', 'line', 'dash'
         protected bool _fill = false;
         protected double _lineTension = 0;
-        protected string _borderCapStyle = "";
+        protected string _borderCapStyle = null;
         protected List<double> _borderDash = null;
         protected double _borderDashOffset = 0;
-        protected string _borderJoinStyle = "";
+        protected string _borderJoinStyle = null;
         protected List<string> _pointBorderColor = null;
         protected List<string> _pointBackgroundColor = null;
         protected List<double> _pointBorderWidth = null;
@@ -86,7 +86,7 @@ namespace JsNet.ChartJs
         protected bool _showLine = false;
         protected bool _spanGaps = false;
         protected bool _steppedLine = false;
-        protected string _cubicInterpolationMode = "";
+        protected string _cubicInterpolationMode = null;
 
 
         public string label { get { return _label; } set { _label = value; } }

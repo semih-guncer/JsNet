@@ -30,9 +30,9 @@ namespace JsNet
 
     public class JsNetFunction : JsNetBaseClass
     {
-        private string _name = "";
-        private List<string> _parameters = new List<string>();
-        private List<string> _bodyLines = new List<string>();
+        private string _name = null;
+        private List<string> _parameters = null;
+        private List<string> _bodyLines = null;
 
         public string name { get { return _name; } set { _name = value; } }
         public List<string> parameters { get { return _parameters; } set { _parameters = value; } }
@@ -44,6 +44,18 @@ namespace JsNet
     /// </summary>
     public class JsNetClass
     {
+        public static void Load(ref JsNetFunction o, string fileName)
+        {
+            JsNetBaseClass ob = o;
+            jsonLoad(ref ob, fileName);
+            o = (JsNetFunction)ob;
+        }
+
+        public static string Serialize(JsNetFunction jsnetFunction, int indentStep)
+        {
+            return javascriptSerialize(jsnetFunction, indentStep);
+        }
+
         protected static string jsonSerialize(JsNetBaseClass o)
         {
             JavaScriptSerializer s = new JavaScriptSerializer();

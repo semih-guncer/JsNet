@@ -24,7 +24,7 @@ namespace JsNet.ChartJs
     /// </summary>
     public abstract class ConfigClass : JsNetBaseClass
     {
-        protected string _type = ""; // { line, bar, radar, polarArea, pie, doughnut, bubble }
+        protected string _type = null; // { line, bar, radar, polarArea, pie, doughnut, bubble }
         protected OptionsClass _options = new OptionsClass();
     }
 

@@ -75,7 +75,7 @@ namespace JsNet.ChartJs.Options
         private string _fontColor = "#666";
         private string _fontStyle = "bold";
         private double _padding = 10;
-        private string _text = "";
+        private string _text = null;
 
         public bool display { get { return _display; } set { _display = value; } }
         public string position { get { return _position; } set { _position = value; } }
@@ -231,11 +231,11 @@ namespace JsNet.ChartJs.Options
     public class ScaleClass : JsNetBaseClass
     {
         // "category", "linear", "logarithmic", "time", "radialLinear"
-        private string _type = ""; //  Chart specific.
+        private string _type = null; //  Chart specific.
         private bool _display = true;
         // 'top', 'left', 'bottom' and 'right'.
         private string _position = "left";
-        private string _id = "";
+        private string _id = null;
 
         private JsNetFunction _beforeUpdate = null;
         private JsNetFunction _beforeSetDimensions = null;
