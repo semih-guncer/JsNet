@@ -5,5 +5,8 @@
   "showOn": "both",
   "showButtonPanel": false,
   "showAnim": "slideDown",
-  "buttonText": "<i class='glyphicon glyphicon-th'></i>"
+  "buttonText": "<i class='glyphicon glyphicon-th'></i>",
+  "onSelect": {
+    "bodyLines": [ "this.fireEvent && this.fireEvent('onchange') || $(this).change();" ]
+  }
 }

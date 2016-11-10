@@ -1,0 +1,10 @@
+[jQuery.MaskedInput]
+http://digitalbush.com/projects/masked-input-plugin
+https://github.com/digitalBush/jquery.maskedinput
+Description: Masked Input plugin for jQuery (digitalbush.com)
+
+
+[jQuery.InputMask]
+http://robinherbots.github.io/Inputmask/
+https://github.com/RobinHerbots/Inputmask
+
