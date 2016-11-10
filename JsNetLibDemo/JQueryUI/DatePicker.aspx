@@ -11,25 +11,44 @@
 <!--[if IE]><script type="text/javascript" src='<%# Page.ResolveUrl("~/Scripts/jquery.bgiframe.js") %>'></script><![endif]-->
   <script type="text/javascript" src="../Scripts/jquery-ui-1.12.1.js"></script>
   <script type="text/javascript" src="../Scripts/jquery-ui-i18n.min.js"></script>
- <script type="text/javascript" src="../Scripts/bootstrap.js"></script>
+  <script type="text/javascript" src="../Scripts/jquery.maskedinput.js"></script>
+  <script type="text/javascript" src="../Scripts/jquery.inputmask/jquery.inputmask.bundle.js"></script>
+  <script type="text/javascript" src="../Scripts/bootstrap.js"></script>
      
  </head>
  <body>
   <form id="form1" runat="server">
    <div class="content-box">
     <h1><%= Page.Title %></h1>
+    <asp:LinkButton ID="lbHome" runat="server" PostBackUrl="~/Default.aspx" Text="Home" /><br />
     <div class="row">
      <div class="col-md-2" style="margin-top:15px;margin-left:15px;padding:5px;background-color:#f8f8f8;">
       <p>DatePicker</p>
-      <asp:TextBox runat="server" ID="tbDatePickerClass"></asp:TextBox>
+      <asp:TextBox runat="server" ID="tbDatePicker" /><br />
 <script type="text/javascript">
-    $('#tbDatePickerClass').datepicker(<%= GetExampleDatePicker() %>);
-    //$("#tbDatePickerClass").datepicker("option", $.datepicker.regional["tr"]);
+    $('#tbDatePicker').datepicker(<%= GetExampleDatePicker() %>);
 </script>
+      <br />
      </div>
+     <div class="col-md-2" style="margin-top:15px;margin-left:15px;padding:5px;background-color:#f8f8f8;">
+      <p>DatePicker & Masked Input</p>
+      <asp:TextBox runat="server" ID="tbDatePickerMaskedInput" /><br />
+<script type="text/javascript">
+    $('#tbDatePickerMaskedInput').datepicker(<%= GetExampleDatePicker() %>).mask("99.99.9999");
+</script>
+      <br />
+     </div>
+     <div class="col-md-2" style="margin-top:15px;margin-left:15px;padding:5px;background-color:#f8f8f8;">
+      <p>DatePicker & Input Mask</p>
+      <asp:TextBox runat="server" ID="tbDatePickerInputMask" data-inputmask="'alias': 'dd.mm.yyyy'" /><br />
+<script type="text/javascript">
+    $('#tbDatePickerInputMask').datepicker(<%= GetExampleDatePicker() %>);
+</script>
+      <br />
+     </div>
+
     </div>
- 
-    <asp:LinkButton ID="lbHome" runat="server" PostBackUrl="~/Default.aspx" Text="Home" /><br />
+
    </div>
   </form>
  </body>

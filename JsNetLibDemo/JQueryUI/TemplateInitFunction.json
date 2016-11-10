@@ -1,5 +1,8 @@
 {
   "name": "",
   "parameters": [],
-  "bodyLines": [ "$.datepicker.setDefaults($.datepicker.regional['en']);" ]
+  "bodyLines": [
+    "$(':input').inputmask();",
+    "$.datepicker.setDefaults($.datepicker.regional['en']);"
+  ]
 }

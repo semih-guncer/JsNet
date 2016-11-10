@@ -22,15 +22,6 @@ namespace JsNetLibDemo.JQueryUI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// tbDatePickerClass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbDatePickerClass;
-        
-        /// <summary>
         /// lbHome control.
         /// </summary>
         /// <remarks>
@@ -38,5 +29,32 @@ namespace JsNetLibDemo.JQueryUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbHome;
+        
+        /// <summary>
+        /// tbDatePicker control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbDatePicker;
+        
+        /// <summary>
+        /// tbDatePickerMaskedInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbDatePickerMaskedInput;
+        
+        /// <summary>
+        /// tbDatePickerInputMask control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbDatePickerInputMask;
     }
 }

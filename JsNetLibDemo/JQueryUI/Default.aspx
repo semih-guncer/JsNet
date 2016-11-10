@@ -14,9 +14,10 @@
   <form id="form1" runat="server">
    <div class="content-box">
     <h1><%= Page.Title %></h1>
+    <asp:LinkButton ID="lbHome" runat="server" PostBackUrl="~/Default.aspx" Text="Home" /><br />
+    <br />
     <a href="DatePicker.aspx">DatePicker</a><br />
  
-    <asp:LinkButton ID="lbHome" runat="server" PostBackUrl="~/Default.aspx" Text="Home" /><br />
    </div>
   </form>
  </body>

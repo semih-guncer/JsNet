@@ -162,25 +162,43 @@ namespace JsNet
                     else if (o is JsNetFunction)
                     {
                         JsNetFunction of = (JsNetFunction)o;
-                        
+
                         StringBuilder sp = new StringBuilder();
-                        for (int i = 0; i < of.parameters.Count; i++)
+                        if (of.parameters != null)
                         {
-                            string item = of.parameters[i].Trim();
-                            if (item == "")
-                                item = "null";
-                            if (i > 0)
-                                sp.Append(", ");
-                            sp.Append(item);
+                            for (int i = 0; i < of.parameters.Count; i++)
+                            {
+                                string item = "";
+                                if (of.parameters[i] != null)
+                                    of.parameters[i].Trim();
+                                if (item == "")
+                                    item = "null";
+                                if (i > 0)
+                                    sp.Append(", ");
+                                sp.Append(item);
+                            }
                         }
-                        s.AppendLine(" function " + of.name + "(" + sp.ToString() + ")");
-                        s.AppendLine("{");
-                        for (int i = 0; i < of.bodyLines.Count; i++)
+                        string fName = "";
+                        if (of.name != null)
+                            fName = of.name.Trim();
+
+                        int lineCount = 0;
+                        if (of.bodyLines != null)
+                            lineCount = of.bodyLines.Count;
+
+                        if (fName == "" || lineCount > 0)
                         {
-                            string item = of.bodyLines[i].Trim();
-                            s.AppendLine(item);
+                            s.AppendLine(" function " + fName + "(" + sp.ToString() + ")");
+                            s.AppendLine("{");
+                            for (int i = 0; i < of.bodyLines.Count; i++)
+                            {
+                                string item = of.bodyLines[i].Trim();
+                                s.AppendLine(item);
+                            }
+                            s.AppendLine("}");
                         }
-                        s.AppendLine("}");
+                        else
+                            s.AppendLine(" " + fName + "(" + sp.ToString() + ");");
                     }
                     else
                     {
