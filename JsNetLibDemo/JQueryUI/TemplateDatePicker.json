@@ -1,0 +1,9 @@
+{
+  "showStatus": true,
+  "changeMonth": true,
+  "changeYear": true,
+  "showOn": "both",
+  "showButtonPanel": false,
+  "showAnim": "slideDown",
+  "buttonText": "<i class='glyphicon glyphicon-th'></i>"
+}

@@ -1,0 +1,5 @@
+{
+  "name": "",
+  "parameters": [],
+  "bodyLines": [ "$.datepicker.setDefaults($.datepicker.regional['en']);" ]
+}

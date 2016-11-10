@@ -11,6 +11,7 @@
   <div>
    <h1><%= Page.Title %></h1>
    <a href="ChartJs/Default.aspx">Chart.js</a><br />
+   <a href="JQueryUI/Default.aspx">JQuery UI</a><br />
    
   </div>
  </form>

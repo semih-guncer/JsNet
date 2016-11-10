@@ -49,6 +49,7 @@
     <Compile Include="ChartJs\DatasetClass.cs" />
     <Compile Include="ChartJs\OptionsClass.cs" />
     <Compile Include="JQueryUI\DatePickerClass.cs" />
+    <Compile Include="JQueryUI\JQueryUINet.cs" />
     <Compile Include="JsNetClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
