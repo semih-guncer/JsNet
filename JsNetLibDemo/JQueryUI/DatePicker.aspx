@@ -6,7 +6,7 @@
  <head runat="server">
   <title><%= Page.Title %></title>
   <link rel="stylesheet" type="text/css" href="~/Content/themes/base/jquery-ui.css"/>
- <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css"/>
   <script type="text/javascript" src="../Scripts/jquery-3.1.1.js"></script>
 <!--[if IE]><script type="text/javascript" src='<%# Page.ResolveUrl("~/Scripts/jquery.bgiframe.js") %>'></script><![endif]-->
   <script type="text/javascript" src="../Scripts/jquery-ui-1.12.1.js"></script>
@@ -16,7 +16,7 @@
  </head>
  <body>
   <form id="form1" runat="server">
-   <div>
+   <div class="content-box">
     <h1><%= Page.Title %></h1>
     <div class="row">
      <div class="col-md-2" style="margin-top:15px;margin-left:15px;padding:5px;background-color:#f8f8f8;">
@@ -28,6 +28,8 @@
 </script>
      </div>
     </div>
+ 
+    <asp:LinkButton ID="lbHome" runat="server" PostBackUrl="~/Default.aspx" Text="Home" /><br />
    </div>
   </form>
  </body>
