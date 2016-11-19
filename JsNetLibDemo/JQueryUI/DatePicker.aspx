@@ -39,10 +39,10 @@
       <br />
      </div>
      <div class="col-md-2" style="margin-top:15px;margin-left:15px;padding:5px;background-color:#f8f8f8;">
-      <p>DatePicker & Input Mask</p>
+      <p>DatePicker(tr) & Input Mask</p>
       <asp:TextBox runat="server" ID="tbDatePickerInputMask" data-inputmask="'alias': 'dd.mm.yyyy'" /><br />
 <script type="text/javascript">
-    $('#tbDatePickerInputMask').datepicker(<%= GetExampleDatePicker() %>);
+    $('#tbDatePickerInputMask').datepicker(<%= GetExampleDatePicker("tr") %>);
 </script>
       <br />
      </div>

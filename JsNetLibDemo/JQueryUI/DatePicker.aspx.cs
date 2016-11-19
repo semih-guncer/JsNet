@@ -24,6 +24,16 @@ namespace JsNetLibDemo.JQueryUI
             return JQueryUINet.Serialize(c, 2);
         }
 
+        public string GetExampleDatePicker(string languageName)
+        {
+            string templateFile = Server.MapPath("TemplateDatePicker.json");
+            string languageFile = Server.MapPath("i18n/DatePicker_" + languageName + ".json");
+            DatePickerClass c = new DatePickerClass();
+            JQueryUINet.Load(ref c, templateFile, languageFile);
+
+            return JQueryUINet.Serialize(c, 2);
+        }
+
         public string GetInitFunction()
         {
             string templateFile = Server.MapPath("TemplateInitFunction.json");
